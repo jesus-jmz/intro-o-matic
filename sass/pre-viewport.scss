@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.pre-viewport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $blue;
+}
+
+/*.final-touches {
+  display: flex;
+  align-items: center;
+  position: fixed;
+}*/

@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+@use 'switch';
+@use 'form';
+@use 'header';
+@use 'prompt';
+@use 'preview';
+@use 'pre-viewport';
+@use 'panels';
+
+html{
+  height:100%;
+  body{
+      display: flex;
+      font-family: $fuente-ubuntu;
+      margin: 0;
+
+      pre {
+        font-family: $fuente-ubuntu;
+      }
+    }
+}

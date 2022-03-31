@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/master.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <title>Intro-o-Matic</title>
+  </head>
+  <body>
+    <section name="left" class="panels">
+      <header>
+        <h1>Intro-o-Matic</h1>
+        <p>Esta herramienta te ayudará a crear una súper introducción para tu slab.</p>
+      </header>
+      <form>
+        <!--
+        <p>¿Es el primero o el único slab que desarrollarás sobre este tema?</p>
+        <div class="switch">
+          <div>
+            <input type="checkbox" id="q1cbY" onclick="
+            keepOnly1Checked('q1cbY', 'q1cbN');
+            show('q2');
+            hide('q3');">
+            Sí, es mi primer slab o el único slab que haré
+          </div>
+          <div>
+            <input type="checkbox" id="q1cbN" onclick="
+            keepOnly1Checked('q1cbN', 'q1cbY');
+            show('q3');
+            hide('q2');">
+            No, este no es el primero
+          </div>
+          <hr class="solid">
+        </div>q1 -->
+
+        <!-- q2
+        <div id="q2" style="display:none;">
+          <p>Preséntate como una autoridad sobre el tema</p>
+          <div class="prompt">
+            <textarea cols="40" rows="5" id="q2a"></textarea>  <!-- permitir texto multilinea-->
+            <!-- <button type="button" name="button" onclick="capture('q2a', 0, '', '.'); show('q5')">Capturar</button>
+          </div>
+          <p class="preview" id="q2p">Ej. Hola, soy Severus Snape. Soy Profesor
+            de Pociones de la escuela Howarts de magia y hechicería. También he
+            sido profesor de defensa contra las artes oscuras en la misma institución. </p>
+          <hr class="solid">
+        </div> -->
+
+        <!-- q3 -->
+        <div id="q3">
+          <p>¿Quieres iniciar la introducción con un breve saludo?</p>
+          <div class="switch">
+            Sí
+            <input type="checkbox" id="q3cbY" onclick="
+            keepOnly1Checked('q3cbY', 'q3cbN');
+            show('q4');
+            hide('q5');">
+            No
+            <input type="checkbox" id="q3cbN" onclick="
+            keepOnly1Checked('q3cbN', 'q3cbY');
+            show('q5');
+            hide('q4');">
+          </div>
+          <hr class="solid">
+        </div>
+
+        <!-- q4 -->
+        <div id="q4" style="display:none;">
+          <label for="intros">Usa una de las posibles opciones</label>
+          <select name="intros" id="q4a">
+            <option value="Te damos la bienvenida a esta experiencia de aprendizaje.">
+              Te damos la bienvenida a esta experiencia de aprendizaje.</option>
+            <option value="¡Estamos muy felices de que seas parte de esta experiencia de aprendizaje!">
+              ¡Estamos muy felices de que seas parte de esta experiencia de aprendizaje!</option>
+            <option value="¿Todo listo para iniciar esta experiencia de aprendizaje? ¡Excelente!">
+              ¿Todo listo para iniciar esta experiencia de aprendizaje? ¡Excelente!</option>
+            <option value="El aprendizaje es una aventura, por ello hemos preparado para ti una experiencia donde conocerás conceptos y herramientas muy útiles.">
+              El aprendizaje es una aventura, por ello hemos preparado para ti una experiencia donde conocerás conceptos y herramientas muy útiles.</option>
+            <option value="¡Felicidades! Has llegado a una nueva experiencia de aprendizaje.">
+              ¡Felicidades! Has llegado a una nueva experiencia de aprendizaje.</option>
+            <option value="En este slab descubrirás un tema que sabemos será de gran interés para ti.">
+              En este slab descubrirás un tema que sabemos será de gran interés para ti.</option>
+            <option value="Aprender algo nuevo es una gran aventura, por eso nos alegra mucho que seas parte de este slab.">
+              Aprender algo nuevo es una gran aventura, por eso nos alegra mucho que seas parte de este slab.</option>
+            <option value="¡Te damos la  bienvenida a esta experiencia de aprendizaje!">
+              ¡Te damos la  bienvenida a esta experiencia de aprendizaje!</option>
+            <option value="¡Gracias por ser parte de esta experiencia de aprendizaje!">
+              ¡Gracias por ser parte de esta experiencia de aprendizaje!</option>
+            <option value="Bienvenido, aprendedor(a). Nos alegra que estés aquí.">
+              Bienvenido, aprendedor(a). Nos alegra que estés aquí.</option>
+          </select>
+          <button type="button" name="button" onclick="capture('q4a', 0, '', ''); show('q5')">Capturar</button>
+          <hr class="solid">
+        </div>
+
+        <!-- q5 -->
+        <div id="q5" style="display:none;">
+          <p>¿Quieres agregar otro dato (por ej. Concepto a aprender, dato relevante o
+            interesante para iniciar) o pasar directo a los temas?</p>
+          <div class="switch">
+            <div class="">
+              <input type="checkbox" id="q5cbY" onclick="
+              keepOnly1Checked('q5cbY', 'q5cbN');
+              show('q6');
+              hide('q7');">
+              Sí, agregaré otro dato
+            </div>
+            <div>
+              <input type="checkbox" id="q5cbN" onclick="
+              keepOnly1Checked('q5cbN', 'q5cbY');
+              show('q7');
+              hide('q6');">
+              No, pasaré a los temas
+            </div>
+          </div>
+          <hr class="solid">
+        </div>
+
+        <!-- q6 -->
+        <div id="q6" style="display:none;">
+          <p>Escoge una de las siguientes opciones:</p>
+          <div>
+            <input type="radio" id="conceptoAp" name="dato" value="concepto" onclick="show('q6-a');hide('q6-b');hide('q6-c');">
+            <label for="conceptoAp">Concepto a aprender </label>
+          </div>
+
+          <div>
+            <input type="radio" id="datoRele" name="dato" value="datoRele" onclick="show('q6-b');hide('q6-a');hide('q6-c');">
+            <label for="datoRele">Dato Relevante</label>
+          </div>
+
+          <div>
+            <input type="radio" id="datoInte" name="dato" value="datoInte" onclick="show('q6-c');hide('q6-a');hide('q6-b');">
+            <label for="datoInte">Dato Interesante (Información cómica, curiosa, o poco conocida)</label>
+          </div>
+        </div>
+
+        <!-- q6-a -->
+        <div id="q6-a" style="display:none;">
+          <div class="prompt">
+            <input type="text" id="concepto" placeholder="Concepto a aprender">
+            <pre> es </pre>
+            <select id="adjConcepto" name="adjetivos">
+              <option value="necesario">necesario</option>
+              <option value="imprescindible">imprescindible</option>
+              <option value="muy importante">muy importante</option>
+            </select>
+            <select id="unionConcepto" name="uniones">
+              <option value=" para ">para</option>
+              <option value=" porque ">porque</option>
+            </select>
+            <textarea id=razConcepto rows="5" cols="40"></textarea>
+            <button type="button" name="button" onclick="captureConcept(); show('q7');">Capturar</button>
+          </div>
+          <p id="q6-ap" class="preview">Ej. Aprender sobre ingredientes difíciles de
+            encontrar es muy importante para expandir tu habilidad de crear nuevas
+            pociones mágicas.</p>
+          <hr class="solid">
+        </div>
+
+        <!-- q6-b -->
+        <div id="q6-b" style="display:none;">
+          <label for="datoRel">Dato relevante para iniciar</label>
+          <div class="prompt">
+            <textarea id="datoRel" rows="5" cols="40"></textarea>
+            <button type="button" name="button"
+            onclick="capture('datoRel', 1, '', '.'); show('q7');">Capturar</button>
+          </div>
+          <p id="q6-bp" class="preview">Ej. Un Bezoar es una piedra sacada del estomago
+            de una cabra y sirve para eliminar la mayoría de los venenos, siendo
+            una excepción el veneno de basilísco.</p>
+          <hr class="solid">
+        </div>
+
+        <!-- q6-c -->
+        <div id="q6-c" style="display:none;">
+          <label for="datoInt">Dato interesante o curioso para iniciar</label>
+          <div class="prompt">
+            <pre>¿Sabías que </pre>
+            <textarea id="datoInt" rows="5" cols="40"></textarea>
+            <button type="button" name="button"
+            onclick="capture('datoInt', 1, '¿Sabías que ', '?'); show('q7');">Capturar</button>
+          </div>
+          <p id="q6-cp" class="preview">Ej. ¿Sabías que las mandragoras lloran cuando
+            las sacas de la maceta? Este es un mecanismo de defensa para que no
+            las corten.?</p>
+          <hr class="solid">
+        </div>
+
+        <!-- q7 -->
+        <div id="q7" style="display:none;">
+          <p>Arma tus enunciados iniciales<br>
+          1. Llena los siguientes campos.<br>
+          2. Presiona Capturar para capturar cada uno de tus encunciados de inicio.<br>
+          Nota: Tienes un máximo de 5 enunciados.</p>
+          <div class="prompt">
+            <select id="starter1" name="starters">
+              <option value="En este slab ">En este slab </option>
+              <option value="A continuación ">A continuación </option>
+            </select>
+            <select id="starter2" name="starters">
+              <option value="aprenderás ">aprenderás</option>
+              <option value="descubrirás ">descubrirás</option>
+              <option value="entenderás ">entederás</option>
+              <option value="identificarás ">identificarás</option>
+            </select>
+            <input id="starter3" type="text" placeholder="concepto">
+          </div>
+          <div class="prompt">
+            <button type="button" name="buttonSt" onclick="captureStarter(); show('q8');">
+              Capturar</button>
+            <!-- <button type="button" id="buttonAdd" onclick="addStarter();">Añadir</button> --->
+            <button type="button" name="buttonClear" onclick="clearStarter();">Borrar enunciados</button>
+          </div>
+          <p id='q7p' class="preview">Ej. En este slab aprenderás recetas de pócimas mágicas.</p>
+          <hr class="solid">
+        </div>
+
+        <!-- q8 -->
+        <div id="q8" style="display:none;">
+          <p>¿Quieres complementar añadiendo los usos o beneficios de este aprendizaje?</p>
+          <div class="switch">
+            Sí
+            <input type="checkbox" id="q8cbY" onclick="
+            keepOnly1Checked('q8cbY', 'q8cbN');
+            show('q9');
+            hide('q10');">
+            No
+            <input type="checkbox" id="q8cbN" onclick="
+            keepOnly1Checked('q8cbN', 'q8cbY');
+            show('q10');
+            hide('q9');">
+          </div>
+          <hr class="solid">
+        </div>
+
+        <!-- q9 : Beneficio-->
+        <div id="q9" style="display:none;">
+          <p>Usa la siguiente frase para explicar los usos o beneficios de este aprendizaje.<br>
+          <div class="prompt">
+            <select id="benefit1" name="benefits">
+              <option value="Lo que ">Lo que </option>
+              <option value="Esto ">Esto </option>
+              <option value="Saberlo ">Saberlo </option>
+              <option value="Entenderlo ">Entenderlo </option>
+            </select>
+            <pre> te </pre>
+            <select id="benefit2" name="benefits">
+              <option value="permitirá ">permitirá</option>
+              <option value="servirá ">servirá</option>
+              <option value="ayudará ">ayudará</option>
+              <option value="será de gran utilidad ">será de gran utilidad</option>
+            </select>
+            <input id="benefit3" type="text" placeholder="beneficio">
+          </div>
+          <div class="prompt">
+            <button type="button" name="button" onclick="captureBenefit(); show('q10');">
+              Capturar</button>
+          </div>
+          <p id='q9p' class="preview"> Saberlo te permitirá incrementar tu repertorio
+            de hechizos e incrementará tu reputación como mago.</p>
+          <hr class="solid">
+        </div>
+
+        <!-- q10 -->
+        <div id="q10" style="display:none;">
+          <p>¿Quieres añadir una frase de despedida?</p>
+          <div class="switch">
+            Sí
+            <input type="checkbox" id="q10cbY" onclick="
+            keepOnly1Checked('q10cbY', 'q10cbN');
+            show('q11');">
+            No
+            <input type="checkbox" id="q10cbN" onclick="
+            keepOnly1Checked('q10cbN', 'q10cbY');
+            hide('q11'); show('thanks')">
+          </div>
+          <hr class="solid">
+        </div>
+
+        <!-- q11 -->
+        <div id="q11" style="display:none;">
+          <label for="closings">Usa una de las posibles frase de despedida prehechas o escribe una tú</label>
+          <select name="closings" id="q11a" class="prompt">
+            <option value="Estamos muy felices de que seas parte de esta experiencia de aprendizaje. Comencemos.">
+              Estamos muy felices de que seas parte de esta experiencia de aprendizaje. Comencemos.</option>
+            <option value="Muchas gracias por ser parte de esta experiencia de aprendizaje. ¡Adelante!">
+              Muchas gracias por ser parte de esta experiencia de aprendizaje. ¡Adelante!</option>
+            <option value="¡Comencemos!">¡Comencemos!</option>
+            <option value="¿Todo listo? Comencemos.">¿Todo listo? Comencemos.</option>
+            <option value="Sin más, te damos la bienvenida a esta experiencia de aprendizaje.">
+            Sin más, te damos la bienvenida a esta experiencia de aprendizaje.</option>
+            <option value="Confiamos en que esta información te será no solamente interesante, sino muy útil.">
+              Confiamos en que esta información te será no solamente interesante, sino muy útil.</option>
+            <option value="Esperamos que disfrutes de esta experiencia tanto como disfrutamos prepararla para ti.">
+            Esperamos que disfrutes de esta experiencia tanto como disfrutamos prepararla para ti.</option>
+            <option value="¡Que disfrutes esta experiencia de aprendizaje!">
+            ¡Que disfrutes esta experiencia de aprendizaje!</option>
+            <option value="En este slab hemos preparado todo para que aprendas lo más importante sobre este tema. Comencemos.">
+              En este slab hemos preparado todo para que aprendas lo más importante sobre este tema. Comencemos.</option>
+            <option value="Quizá sea algo nuevo en este momento pero ya verás lo interesante que resulta. Adelante y bienvenido.">
+              Quizá sea algo nuevo en este momento pero ya verás lo interesante que resulta. Adelante y bienvenido.</option>
+          </select>
+          <div class="prompt">
+            <button type="button" name="button" onclick="capture('q11a', 4, '', ''); show('thanks')">Capturar</button>
+          </div>
+          <div>
+            <input type="checkbox" id="q11cbY" onclick="
+            show('q12');">
+            Escribiré mi propio cierre.
+          </div>
+          <hr class="solid">
+        </div>
+
+        <!-- q12 : Custom closing -->
+        <div id="q12" style="display:none;">
+          <p>Redacta tu frase de despedida personalizada</p>
+          <div class="prompt">
+            <textarea cols="40" rows="5" id="q12a"></textarea>  <!-- permitir texto multilinea-->
+            <button type="button" name="button" onclick="capture('q12a', 4, '', '.'); show('thanks')">Capturar</button>
+          </div>
+          <p class="preview" id="q12p"></p>
+          <hr class="solid">
+        </div>
+
+        <!-- Thank you message -->
+        <div id="thanks" style="display:none;">
+          <p><strong>¡Felicidades!</strong><br>Has terminado tu introducción, ahora puedes retocarla
+            en el panel de la derecha. Al terminar, cópiala y pégala donde se te solicite.</p>
+        </div>
+      </form>
+    </section>
+
+    <section name="right" class="panels pre-viewport">
+      <!-- final touches -->
+      <div id="finalTouches">
+        <div style="display=block;">
+          <p>Presiona en Recalcular para ver como ha resultado la introducción a
+            tu experiencia de aprendizaje.<br>
+            Leela y afina detalles si lo ves necesario.</p>
+          <button type="button" name="button" onclick="recalculate()">Recalcular</button>
+          <div class="prompt">
+            <textarea id="finalOutput" name="name" rows="8" cols="80"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="text/javascript" src="js/form_algorithm.js"></script>
+  </body>
+</html>
